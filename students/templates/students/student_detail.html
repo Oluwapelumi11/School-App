@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{%load static%}
+{%block content%}
+<p> student details</p>
+{% if student%}
+{{student}}
+{{student.id}}
+{{student.enrollment_date}}
+{{student.parent_email}}
+{{student.get_fee}}
+{{student.classroom}}
+{{student.optional_fees}}
+{{student.get_60}}
+{{student.get_100}}
+{{student.mandatory_fees}}
+{% endif%}
+{%endblock%}

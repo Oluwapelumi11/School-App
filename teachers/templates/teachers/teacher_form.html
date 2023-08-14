@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if form.errors %}
+  <div id="error_message" class="bg-gray-500 text-center self-center  text-red-500">
+    <ul>
+      {% for field_errors in form.errors.values %}
+        {% for error in field_errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+<form class="jumbotron" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% for field in form %}
+  <div class="fieldWrapper ">
+    <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+    {{ field }}
+  </div>
+  {% endfor %}
+  
+  <input type="submit" value="submit" class="btn btn-success">
+</form>
+
+<script type="module">
+  import $ from 'https://code.jquery.com/jquery-3.6.0.min.js';
+
+  $(document).ready(function() {
+    setTimeout(function() {
+        $('#error_message').fadeOut();
+    }, 4000);
+  });
+
+</script>
+
+{% endblock %}

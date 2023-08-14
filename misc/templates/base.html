@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {%load static%}
+  <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+
+  <script src="{% static 'assets/js/jquery-3.7.0.min.js' %}"></script>
+
+  {% bootstrap_javascript %}
+  <script src="{% static 'umd/popper.min.js' %}"></script>
+</head>
+<body>
+  
+  <div class="container-fluid">
+    {% include "partials/_navbar.html" %}
+    
+    
+  </div>
+  <div class="container-fluid ">
+   {% block content %}
+   {% endblock %}
+  </div>
+</body>
+</html>
+

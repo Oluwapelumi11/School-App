@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{%load static%}
+{%block content%}
+<p> Here are our Students </p>
+{% if students%}
+{% for student in students%}
+<ul> <a href="{% url 'students:details' student.id %}" >{{ student }}</a></ul>
+{%endfor%}
+<br><br><br>
+{%else%}
+
+<p>no students yet</p>
+{% endif%}
+
+{%endblock%}

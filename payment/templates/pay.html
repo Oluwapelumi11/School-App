@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{%block content%}
+
+<button class="btn btn-success" id="pay" onclick="PayWithPayStack()">Pay Money</button>
+<script>
+  function PayWithPayStack(){
+    const paystack = new PaystackPop();
+  paystack.newTransaction({
+      key: '{{paystack_pk}}',
+      email: '{{payment.owner.user.email}}',
+      ref: '{{payment.ref}}',
+      amount: {{payment.amount_value}},
+      
+      onSuccess: (transaction) => { 
+        window.location.href ='{% url "accounts:verify_payment" payment.ref %}';
+      },
+      onCancel: () => {
+        alert("user closed popup")
+      }
+    });
+  };
+</script>
+<script src="https://js.paystack.co/v2/inline.js">
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{%load static%}
+{%block content%}
+<p> Here are our Teachers </p>
+{% if teachers%}
+{% for teacher in teachers%}
+<div class="card-box col-md-4 col-sm-6">
+    <div class="card">
+        <div class="header">
+            <img src="{{teacher.image}}" alt="teacher" />
+
+            <div class="social-line social-line-visible" data-buttons="4">
+                <button class="btn btn-social btn-facebook">
+                    <i class="fa fa-facebook"></i>
+                </button>
+                <button class="btn btn-social btn-twitter">
+                    <i class="fa fa-twitter"></i>
+                </button>
+                <button class="btn btn-social btn-pinterest">
+                    <i class="fa fa-pinterest"></i>
+                </button>
+                <button class="btn btn-social btn-google">
+                    <i class="fa fa-google-plus"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="content text-center">
+            <h6 class="category text-center">{{teacher}}</h6>
+            <h4 class="title">Meet Our Basic Science Teacher</h4>
+            <p class="description">Master Faith is our basic Science teacher who also loves computers, He also has a superpower in making sure his lectures are both fun abnd passing a message
+            </p>
+            <a class=" btn btn-warning" data-bs-toggle="tooltip" href=""  data-bs-title="About "></a>
+        </div>
+    </div> <!-- end card -->
+</div>
+
+{%endfor%}
+<br><br><br>
+<a href="{% url 'teachers:create'%}" class="btn btn-primary">Add New Teacher</a>
+{%else%}
+
+<p>no teacher recruited yet</p>
+{% endif%}
+<a href="{% url 'class:details' 1 %}" class="btn btn-primary">Go to class</a>
+{%endblock%}

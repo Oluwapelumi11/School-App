@@ -1,0 +1,70 @@
+{%load static%}
+
+<div class="d-flex">
+    <div class="col-sm-1">
+   <a href="{% url "index" %}" ><img class='img img-thumbnail' width="100%" height="100%" src="{% static 'img/logo.jpg' %}" alt="Joan Isreal"></a>
+  </div>
+<nav class="navbar col-sm-11 navbar-expand-lg bg-light">
+    <div class="container">
+      <a class="navbar-brand link-dark" data-bs-toggle="tooltip" data-bs-title="About Joan Israel School" href="{% url 'index'%}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+        <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+      </svg>Joan Israel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-text-indent-left" viewBox="0 0 16 16">
+            <path d="M2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm.646 2.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L4.293 8 2.646 6.354a.5.5 0 0 1 0-.708zM7 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+          </svg></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link link-dark active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark" data-bs-toggle="tooltip" data-bs-title="Contact us" href="#">Contact-Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark" data-bs-toggle="tooltip" data-bs-title="Explore our E-Learning services" href="#">E-Learning</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link link-dark" data-bs-toggle="tooltip" data-bs-title="Meet our staff" href="{% url "teachers:index"%}">Staffs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark" data-bs-toggle="tooltip" data-bs-title="Enroll your child" href="">Enrollment</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link link-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Activities
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" data-bs-toggle="tooltip" data-bs-title="View Events" href="#">Events</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="tooltip" data-bs-title="Explore our Gallery" href="#">Gallery</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" data-bs-toggle="tooltip" data-bs-title="View campaigns" href="#">Campaigns</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="tooltip" data-bs-title="Our Promotions" href="#">Promotions</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link link-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Login Portals
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" data-bs-toggle="tooltip" data-bs-title="Login as a parent" href="#">Parent Portal</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" data-bs-toggle="tooltip" data-bs-title="login as our student" href="#">Student Portal</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" data-bs-toggle="tooltip" data-bs-title="login as our staff" href="#">Staff Portal</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+</div>
+<script>
+    $(function () {
+      $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+    </script>
+    
